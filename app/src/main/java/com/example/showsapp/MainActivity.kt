@@ -11,6 +11,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.showsapp.navigation.AppNavHost
+import com.example.showsapp.screens.ProductDetailsScreen
 import com.example.showsapp.screens.ProductScreen
 import com.example.showsapp.ui.theme.ShowsAppTheme
 
@@ -22,7 +24,9 @@ class MainActivity : ComponentActivity() {
             ShowsAppTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) {
                     innerPadding ->
-                   ProductScreen()
+                   //ProductScreen()
+                    //ProductDetailsScreen()
+                    AppNavHost()
                 }
             }
         }

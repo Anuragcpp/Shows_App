@@ -2,6 +2,7 @@ package com.example.showsapp.screens.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -35,7 +36,6 @@ import coil.compose.AsyncImage
 import com.example.showsapp.R
 import com.example.showsapp.models.Product
 
-@Preview
 @Composable
 fun ProductItem(
     product: Product = Product(
@@ -47,7 +47,8 @@ fun ProductItem(
         size = 8,
         ratting = 4.6f,
         imageRes = R.drawable.icon
-    )
+    ),
+    onClick : (String) -> Unit
 ) {
 
     var color by remember {
@@ -64,6 +65,7 @@ fun ProductItem(
         modifier = Modifier
             .padding(20.dp)
             .size(168.dp, 190.dp)
+            .clickable { onClick(product.id) }
     ) {
 
         Box(

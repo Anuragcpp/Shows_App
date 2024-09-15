@@ -13,7 +13,10 @@ import com.example.showsapp.models.getPorductList
 import com.example.showsapp.screens.components.ProductItem
 
 @Composable
-fun ProductScreen(modifier: Modifier = Modifier) {
+fun ProductScreen(
+    modifier: Modifier = Modifier,
+    onClick : (String) -> Unit
+) {
     var products : List<Product> = remember {
         getPorductList()
     }
@@ -22,7 +25,7 @@ fun ProductScreen(modifier: Modifier = Modifier) {
 
         items(products) {
             product ->
-            ProductItem(product)
+            ProductItem(product, onClick)
         }
     }
 }

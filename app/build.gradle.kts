@@ -69,4 +69,8 @@ dependencies {
 
     // Coil image loader
     implementation("io.coil-kt:coil-compose:2.0.0")
+
+    // navigation dependencies
+    val nav_version = "2.8.0"
+    implementation("androidx.navigation:navigation-compose:$nav_version")
 }
